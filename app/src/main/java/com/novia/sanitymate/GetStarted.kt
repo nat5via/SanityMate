@@ -17,6 +17,7 @@ class GetStarted : AppCompatActivity() {
 //            val intent = Intent(this@GetStarted, MainActivity::class.java)
 //            startActivity(intent)
 //            finish()
-//        }
+//
+    //        }
     }
 }

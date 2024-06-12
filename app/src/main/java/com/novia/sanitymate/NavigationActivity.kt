@@ -27,7 +27,7 @@ class NavigationActivity : AppCompatActivity() {
         override fun onPageSelected(position: Int) {
             setDotIndicator(position)
 
-            backButton.visibility = if (position > 0) View.VISIBLE else View.INVISIBLE
+            //backButton.visibility = if (position > 0) View.VISIBLE else View.INVISIBLE
 
             //nextButton.text = if (position == dots.size - 1) "Finish" else "Next"
         }
