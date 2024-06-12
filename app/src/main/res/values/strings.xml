@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">SanityMate</string>
+    <string name="screen1">Feel Better, \nLive Better</string>
+    <string name="screen2">Mindfulness \nMade Simple</string>
+
+    <string name="screen1desc">Explore personalized resources to support your emotional well-being and manage stress. Discover articles and tips tailored to help you live a balanced and fulfilling life.</string>
+    <string name="screen2desc">Find easy-to-follow articles and tips to help you stay calm and centered. Embrace mindfulness with practical advice designed for your daily life.</string>
+
+    <string name="title">Welcome to \nSanityMate!</string>
+    <string name="desc">Your Companion for Stress-\nFree Living</string>
+
+
 </resources>

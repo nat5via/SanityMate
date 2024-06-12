@@ -1,62 +1,45 @@
-package com.novia.sanitymate;
+package com.novia.sanitymate
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.viewpager.widget.PagerAdapter
 
-import androidx.annotation.NonNull;
-import androidx.viewpager.widget.PagerAdapter;
+class ViewPagerAdapter(private val context: Context) : PagerAdapter() {
 
-import org.w3c.dom.Text;
+    private val sliderAllImages = intArrayOf(R.drawable.screen1, R.drawable.screen2)
+    private val sliderAllTitle = intArrayOf(R.string.screen1, R.string.screen2)
+    private val sliderAllDesc = intArrayOf(R.string.screen1desc, R.string.screen2desc)
 
-public class ViewPagerAdapter extends PagerAdapter {
-
-    Context context;
-
-    int sliderAllImages[] = {R.drawable.screen1, R.drawable.screen2};
-    int sliderAllTitle[] = {R.string.screen1, R.string.screen2};
-    int sliderAllDesc[] = {R.string.screen1desc, R.string.screen2desc};
-
-    public ViewPagerAdapter(Context context) {
-        this.context = context;
+    override fun getCount(): Int {
+        return sliderAllTitle.size
     }
 
-    @Override
-    public int getCount() {
-        return sliderAllTitle.length;
+    override fun isViewFromObject(view: View, `object`: Any): Boolean {
+        return view == `object` as FrameLayout
     }
 
-    @Override
-    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view == (FrameLayout) object;
+    override fun instantiateItem(container: ViewGroup, position: Int): Any {
+        val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val view = layoutInflater.inflate(R.layout.slider_screen, container, false)
 
+        val sliderImage: ImageView = view.findViewById(R.id.sliderImage)
+        val sliderTitle: TextView = view.findViewById(R.id.sliderTitle)
+        val sliderDesc: TextView = view.findViewById(R.id.sliderDesc)
+
+        sliderImage.setImageResource(sliderAllImages[position])
+        sliderTitle.setText(sliderAllTitle[position])
+        sliderDesc.setText(sliderAllDesc[position])
+
+        container.addView(view)
+        return view
     }
 
-    @NonNull
-    @Override
-    public Object instantiateItem(@NonNull ViewGroup container, int position){
-        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.slider_screen, container, false);
-
-        ImageView sliderImage = (ImageView) view.findViewById(R.id.sliderImage);
-        TextView sliderTitle = (TextView) view.findViewById(R.id.sliderTitle);
-        TextView sliderDesc = (TextView) view.findViewById(R.id.sliderDesc);
-
-        sliderImage.setImageResource(sliderAllImages[position]);
-        sliderTitle.setText(this.sliderAllTitle[position]);
-        sliderDesc.setText(this.sliderAllTitle[position]);
-
-        container.addView(view);
-        return view;
-
-    }
-
-    @Override
-    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object){
-        container.removeView((FrameLayout)object);
+    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+        container.removeView(`object` as FrameLayout)
     }
 }
