@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/green">
+
+    <TextView
+        android:id="@+id/textViewGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/inter_bold"
+        android:shadowColor="@color/darkerGrey"
+        android:shadowDy="10"
+        android:shadowRadius="2"
+        android:text="@string/emotion"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="@id/textEmotion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textEmotion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/work_sans_medium"
+        android:text="@string/emotion2"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewGreeting" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textEmotion">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/buttonWorry"
+                android:layout_width="60dp"
+                android:layout_height="84dp"
+                android:layout_margin="4dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/worry"/>
+
+            <ImageButton
+                android:id="@+id/buttonSad"
+                android:layout_width="60dp"
+                android:layout_height="84dp"
+                android:layout_margin="4dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/sad"/>
+
+            <ImageButton
+                android:id="@+id/buttonAnger"
+                android:layout_width="60dp"
+                android:layout_height="84dp"
+                android:layout_margin="4dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/anger"/>
+
+            <ImageButton
+                android:id="@+id/buttonHappy"
+                android:layout_width="60dp"
+                android:layout_height="84dp"
+                android:layout_margin="4dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/happy"/>
+
+            <ImageButton
+                android:id="@+id/buttonLove"
+                android:layout_width="60dp"
+                android:layout_height="84dp"
+                android:layout_margin="4dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/love"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="306dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/button2"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

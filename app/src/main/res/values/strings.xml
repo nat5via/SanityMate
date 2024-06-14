@@ -10,4 +10,11 @@
     <string name="desc">Your Companion for Stress-\nFree Living</string>
 
 
+    <!--    Layout-->
+
+    <string name="greeting">Hello!\nHow are you feeling?</string>
+    <string name="emotion">What is your\nmood today?</string>
+    <string name="emotion2">We would love to hear from you!</string>
+    <string name="button1">I want to share something!</string>
+    <string name="button2">Next</string>
 </resources>
